@@ -10,28 +10,16 @@
 </head>
 <body>
 
+    <img id="map" src="map.svg" alt="map">
 
+   
+ <script src='https://unpkg.com/panzoom@9.4.0/dist/panzoom.min.js'></script>
+ <script>
+    // just grab a DOM element
+var element = document.querySelector('#map')
 
-
-
-
-    <script>
-        let data = [], width = 600, height = 400, numPoints = 100;
-
-let zoom = d3.zoom()
-  .on('zoom', handleZoom);
-
-function handleZoom(e) {
-  d3.select('svg g')
-    .attr('transform', e.transform);
-}
-
-function initZoom() {
-  d3.select('svg')
-    .call(zoom);
-}
-
-initZoom();
-    </script>
+// And pass it to panzoom
+panzoom(element)
+ </script>
 </body>
 </html>
